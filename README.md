@@ -18,6 +18,14 @@ This skill solves that problem. You tell it which files to merge and what to cal
 
 ---
 
+## How it works / 技术说明
+
+Tableau Public does not support copying sheets between workbooks via the GUI. This skill documents a Python-based approach — treating `.twbx` files as ZIP archives and merging their XML directly — along with hard-won lessons about Tableau's strict XML content model.
+
+Tableau Public 不支持通过界面跨工作簿复制工作表。本 skill 记录了一种 Python 方案——将 `.twbx` 视为 ZIP 压缩包直接合并其 XML——以及调试过程中总结的 Tableau XML 内容模型规则。
+
+---
+
 ## Install the skill / 安装
 
 ### User-level — available in all projects / 用户级——所有项目可用
