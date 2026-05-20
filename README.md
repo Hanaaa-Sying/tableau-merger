@@ -26,31 +26,43 @@ Tableau Public 不支持通过界面跨工作簿复制工作表。本 skill 记�
 
 ---
 
+## How to use / 使用方式
+
+Install the skill once (see below), then open your project folder in Claude Code and type `/tableaumerger`. Tell Claude which files you want to merge and how you'd like the dashboard laid out — it will generate a `merge_twbx.py` script tailored to your specific files. Run the script, and you're done.
+
+The `merge_twbx.py` included in this repo is the script generated for the original project (6 files, 8 charts). It is provided as a reference example, not a ready-to-run script for other projects.
+
+安装好 skill 之后（见下方），在 Claude Code 中打开你的项目文件夹，输入 `/tableaumerger`，告诉 Claude 你有哪些文件、想要什么样的仪表板布局——它会根据你的实际情况生成一份专属的 `merge_twbx.py` 脚本，运行脚本即可。
+
+本仓库中附带的 `merge_twbx.py` 是原始项目（6 个文件、8 张图）使用的脚本，仅供参考，不能直接用于其他项目。
+
+---
+
 ## Install the skill / 安装
 
-### User-level — available in all projects / 用户级——所有项目可用
+### Method 1 — One command / 方法一：一行命令（推荐）
+
+Open a terminal and run:
+打开终端，运行：
 
 ```powershell
-# Windows
-Copy-Item .claude\skills\tableau-merger\tableau-merger.md "$env:USERPROFILE\.claude\commands\"
+# Windows (PowerShell)
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\commands"; Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Hanaaa-Sying/tableau-merger/main/.claude/skills/tableau-merger/tableau-merger.md" -OutFile "$env:USERPROFILE\.claude\commands\tableaumerger.md"
 ```
 
 ```bash
 # macOS / Linux
-cp .claude/skills/tableau-merger/tableau-merger.md ~/.claude/commands/
+mkdir -p ~/.claude/commands && curl -o ~/.claude/commands/tableaumerger.md https://raw.githubusercontent.com/Hanaaa-Sying/tableau-merger/main/.claude/skills/tableau-merger/tableau-merger.md
 ```
 
-### Project-level — available in one project only / 项目级——仅当前项目可用
+### Method 2 — Manual download / 方法二：手动下载
 
-```powershell
-# Windows
-Copy-Item .claude\skills\tableau-merger\tableau-merger.md "your\project\.claude\commands\"
-```
-
-```bash
-# macOS / Linux
-cp .claude/skills/tableau-merger/tableau-merger.md your/project/.claude/commands/
-```
+1. Open `.claude/skills/tableau-merger/tableau-merger.md` in this repo
+   打开本仓库中的 `.claude/skills/tableau-merger/tableau-merger.md`
+2. Click **Raw**, then save the file (Ctrl+S / Cmd+S)
+   点击 **Raw**，然后保存文件
+3. Move it to `C:\Users\你的用户名\.claude\commands\` (Windows) or `~/.claude/commands/` (macOS/Linux) — create the folder if it doesn't exist
+   将文件移动到 `C:\Users\你的用户名\.claude\commands\`（Windows）或 `~/.claude/commands/`（macOS/Linux），文件夹不存在则新建
 
 Then in Claude Code, type `/tableaumerger` to invoke it.
 
@@ -58,17 +70,9 @@ Then in Claude Code, type `/tableaumerger` to invoke it.
 
 ---
 
-## What's included / 文件说明
-
-| File | Description / 说明 |
-|---|---|
-| `.claude/skills/tableau-merger/tableau-merger.md` | Slash command definition / slash command 定义 |
-| `merge_twbx.py` | Complete working merge script / 完整可运行的合并脚本 |
-
----
-
 ## Requirements / 环境要求
 
+- Claude Code (desktop app or CLI)
 - Python 3.x（standard library only, no pip installs / 仅标准库，无需 pip）
 - Tableau Public desktop app / Tableau Public 桌面版
 - All `.twbx` files must share the same data schema / 所有 `.twbx` 文件须使用相同字段结构的数据
