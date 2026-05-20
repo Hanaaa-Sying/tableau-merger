@@ -1,0 +1,12 @@
+# Tableau temp files
+*.twbr
+*.twbx
+__pycache__/
+
+# Data and project files
+*.xls
+*.xlsx
+*.docx
+
+# Claude local settings
+.claude/settings.local.json
