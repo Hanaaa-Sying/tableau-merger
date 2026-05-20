@@ -6,11 +6,15 @@ A Claude Code slash command (`/tableaumerger`) for merging multiple Tableau `.tw
 
 ---
 
-## Background / 背景
+## Background / 背景（这个 skill 是干啥的）
 
-Tableau Public does not support copying sheets between workbooks via the GUI. This skill documents a Python-based approach — treating `.twbx` files as ZIP archives and merging their XML directly — along with hard-won lessons about Tableau's strict XML content model.
+Imagine your team splits up to make charts — each person saves their work as a separate Tableau file. Now you need to combine everything into one dashboard for the final presentation. Simple enough, right? Except Tableau Public (the free version) doesn't actually let you do this through the normal interface. There's no "import" button, and copy-pasting between windows just doesn't work.
 
-Tableau Public 不支持通过界面跨工作簿复制工作表。本 skill 记录了一种 Python 方案——将 `.twbx` 视为 ZIP 压缩包直接合并其 XML——以及调试过程中总结的 Tableau XML 内容模型规则。
+This skill solves that problem. You tell it which files to merge and what to call each chart, and it handles the rest automatically — producing a single `.twbx` file with all your charts and a dashboard ready to open in Tableau Public.
+
+想象一下：你们小组分工合作，每人做了一张图，各自保存为一个 Tableau 文件。最后要把所有图拼成一个仪表板交作业，但打开 Tableau Public（免费版）才发现——根本没有"导入"按钮，窗口之间复制粘贴也不管用。
+
+这个 skill 就是用来解决这个问题的。你告诉它要合并哪些文件、每张图叫什么名字，它自动帮你处理好，最终输出一个包含所有图表和仪表板的 `.twbx` 文件，直接用 Tableau Public 打开就行。
 
 ---
 
