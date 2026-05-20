@@ -1,16 +1,16 @@
 # tableau-merger
 
-**EN** A Claude Code slash command (`/tableaumerger`) for merging multiple Tableau `.twbx` files into a single workbook with a dashboard.
+A Claude Code slash command (`/tableaumerger`) for merging multiple Tableau `.twbx` files into a single workbook with a dashboard.
 
-**中** 一个 Claude Code slash command（`/tableaumerger`），用于将多个 Tableau `.twbx` 文件合并为包含仪表板的单一工作簿。
+一个 Claude Code slash command（`/tableaumerger`），用于将多个 Tableau `.twbx` 文件合并为包含仪表板的单一工作簿。
 
 ---
 
 ## Background / 背景
 
-**EN** Tableau Public does not support copying sheets between workbooks via the GUI. This skill documents a Python-based approach — treating `.twbx` files as ZIP archives and merging their XML directly — along with hard-won lessons about Tableau's strict XML content model.
+Tableau Public does not support copying sheets between workbooks via the GUI. This skill documents a Python-based approach — treating `.twbx` files as ZIP archives and merging their XML directly — along with hard-won lessons about Tableau's strict XML content model.
 
-**中** Tableau Public 不支持通过界面跨工作簿复制工作表。本 skill 记录了一种 Python 方案——将 `.twbx` 视为 ZIP 压缩包直接合并其 XML——以及调试过程中总结的 Tableau XML 内容模型规则。
+Tableau Public 不支持通过界面跨工作簿复制工作表。本 skill 记录了一种 Python 方案——将 `.twbx` 视为 ZIP 压缩包直接合并其 XML——以及调试过程中总结的 Tableau XML 内容模型规则。
 
 ---
 
